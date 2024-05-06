@@ -27,7 +27,7 @@ if [[ -z "$MIXER" ]] ; then
     if command -v pulseaudio >/dev/null 2>&1 && pulseaudio --check ; then
         # pulseaudio is running, but not all installations use "pulse"
         if amixer -D pulse info >/dev/null 2>&1 ; then
-            MIXER="pulse"
+            MIXER="pipewire"
         fi
     fi
     [ -n "$(lsmod | grep jack)" ] && MIXER="jackplug"

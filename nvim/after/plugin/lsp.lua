@@ -10,6 +10,7 @@ require('mason-lspconfig').setup({
 	    'rust_analyzer',
 	    'pyright',
 	    'biome',
+        'gopls',
 	},
 	handlers = {
 	   function(server_name)
@@ -21,27 +22,41 @@ require('mason-lspconfig').setup({
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
-
+local cmp_format = require('lsp-zero').cmp_format({details = true})
 cmp.setup({
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+    },
 	window = {
 	    completion = cmp.config.window.bordered(),
 	    documentation = cmp.config.window.bordered(),
 	},
-
-	mapping = cmp.mapping.preset.insert({
-		['<C-p>'] = cmp_action.luasnip_jump_backward(),
-		['<C-n>'] = cmp_action.luasnip_jump_forward(),
-		['<C-y>'] = cmp.mapping.confirm({ select = true}),
-		['<C-Space>'] = cmp.mapping.complete(),
-	}),
-	snippet = {
-		expand = function(args)
-			require('luasnip').lsp_expand(args.body)
-		end,
-
-	},
-
-})
+    mapping = {
+      ['<C-y>'] = cmp.mapping.confirm({select = false}),
+      ['<Up>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
+      ['<Down>'] = cmp.mapping.select_next_item({behavior = 'select'}),
+      ['<C-p>'] = cmp.mapping(function()
+            if cmp.visible() then
+              cmp.select_prev_item({behavior = 'insert'})
+            else
+              cmp.complete()
+            end
+          end),
+          ['<C-n>'] = cmp.mapping(function()
+            if cmp.visible() then
+              cmp.select_next_item({behavior = 'insert'})
+            else
+              cmp.complete()
+            end
+          end),
+        },
+          snippet = {
+            expand = function(args)
+              require('luasnip').lsp_expand(args.body)
+            end,
+          },
+        })
 
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
