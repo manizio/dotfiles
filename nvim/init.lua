@@ -1,3 +1,2 @@
-require("manizio")
-require("manizio.packer")
-
+require("manizio.core")
+require("manizio.lazy")
