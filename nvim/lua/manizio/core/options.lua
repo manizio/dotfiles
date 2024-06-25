@@ -31,6 +31,7 @@ opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 
+vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
 
 
 
