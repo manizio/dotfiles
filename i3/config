@@ -10,13 +10,14 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 # exec xrandr --output HDMI-A-0 --primary --left-of eDP --auto
 # exec xrandr --output HDMI-A-0 --mode 1920x1080 --rate 144.00
-exec_always xrandr --output HDMI-A-1-0 --primary --left-of eDP-1-0 --auto
-exec_always xrandr --output eDP-1-0 --mode 1680x1050
-exec_always xrandr --output eDP-1-0 --mode 1920x1080 
-exec_always xrandr --output HDMI-A-1-0 --mode 1920x1080 --rate 144.00
-exec_always xrandr --output HDMI-A-1-0 --set "PRIME Synchronization" 1
-exec_always xrandr --output eDP-1-0 --set "PRIME Synchronization" 1
+# exec_always xrandr --output HDMI-A-1-0 --primary --left-of eDP-1-0 --auto
+# exec xrandr --output eDP-1-0 --mode 1680x1050
+# exec xrandr --output eDP-1-0 --mode 1920x1080 
+# exec_always xrandr --output HDMI-A-1-0 --mode 1920x1080 --rate 144.00
+# exec_always xrandr --output HDMI-A-1-0 --set "PRIME Synchronization" 1
+# exec_always xrandr --output eDP-1-0 --set "PRIME Synchronization" 1
 
+exec $HOME/dotfiles/scripts/startup.sh
 include $HOME/dotfiles/i3/workspaces.conf
 
 set $mod Mod1
