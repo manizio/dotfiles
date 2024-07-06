@@ -7,6 +7,7 @@ return {
     },
     config = function()
         local treesitter = require("nvim-treesitter.configs")
+        local autotag = require("nvim-ts-autotag")
 
         treesitter.setup({
             highlight = {
@@ -14,10 +15,6 @@ return {
             },
 
             auto_install = { enable = true },
-
-            autotag = {
-                enable = true
-            },
 
             ensure_installed = {
                 "c",
@@ -27,7 +24,8 @@ return {
                 "vim",
                 "vimdoc",
                 "query"
-            }
+            },
+
         })
     end,
 }
