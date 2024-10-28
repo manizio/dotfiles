@@ -252,7 +252,8 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec_always feh --bg-scale ~/Pictures/wallpaper.*
+# exec_always feh --bg-scale ~/Pictures/wallpaper.*
+exec_always feh --bg-center ~/Pictures/wallpaper5.jpg
 exec_always --no-startup-id picom -CGb
 
 for_window [class="^.*"] border pixel 0
