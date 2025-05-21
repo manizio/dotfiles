@@ -11,6 +11,7 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 export DENO_INSTALL="/home/manizio/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+export GTK_THEME=Adwaita:dark
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -113,3 +114,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH=$PATH:/home/manizio/.spicetify
+
+# powerline-daemon -q
+# . /usr/share/powerline/bindings/zsh/powerline.zsh
