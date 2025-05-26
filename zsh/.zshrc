@@ -117,3 +117,7 @@ export PATH=$PATH:/home/manizio/.spicetify
 
 # powerline-daemon -q
 # . /usr/share/powerline/bindings/zsh/powerline.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
